@@ -37,7 +37,11 @@ RUN pip install \
 	xxHash
 	#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0rc0-cp34-cp34m-linux_x86_64.whl
 
-RUN python -m spacy.en.download
+
+# Install Jupyterlab. This is in beta (Feb 18), so may be unnecessary in the future.
+RUN conda install -c conda-forge jupyterlab
+
+RUN python -m spacy download en
 
 # TensorBoard and Jupyter ports
 EXPOSE 6006
