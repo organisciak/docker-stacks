@@ -8,5 +8,10 @@ By default, this runs a Jupyter notebook, on port 8888 inside the container, map
 Usage:
 
 ```bash
-docker run -p 8888:8888 -e PASSWORD=your_pw -v USE_HTTPS=yes -v /your/workspace/directory/:/notebooks organisciak/datascience
+docker run -p 8888:8888 -e PASSWORD=your_pw -v GEN_CERT=yes -v /your/workspace/directory/:/notebooks organisciak/datascience
 ```
+
+## Docker compose
+
+`docker-compose.yml` show an example of how you might use docker-compose to save your command line settings.
+Set your Jupyter password in `./secrets.env`, and map external:internal directories and ports in `docker-compose.yml`. Then run it with `docker compose up`.

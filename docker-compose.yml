@@ -1,0 +1,12 @@
+version: "2"
+services:
+  notebook:
+    image: organisciak/datascience
+    ports:
+      - "EXTERNALPORT:8888"
+    env_file:
+      - ./secrets.env
+    environment:
+      - GEN_CERT=yes
+    volumes:
+      - /EXTERNAL/DIR:/notebooks/project
